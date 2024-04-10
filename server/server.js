@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000
 
 app.get('/riot-api/:region/:endpoint', (req, res) => {
     const { region, endpoint } = req.params
-    const apiKey = 'RGAPI-d682f9d9-0da8-441f-957e-d6dd66cdb833'
+    const apiKey = `${process.env.RIOT_API_KEY}`
     const options = {
         hostname: `${region}.api.riotgames.com`,
         path: `/${endpoint}?api_key=${apiKey}`,
